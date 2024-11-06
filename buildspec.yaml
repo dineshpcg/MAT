@@ -40,8 +40,9 @@ phases:
       - export AWS_EXPIRATION=$(echo ${CREDENTIALS} | jq -r '.Credentials.Expiration')
       # Updating kubectl with your EKS Cluster              
       - echo "Update Kube Config configuration"      
-      - aws eks update-kubeconfig --name $EKS_CLUSTERNAME
+      - aws eks update-kubeconfig --region us-east-1 --name $EKS_CLUSTERNAME
       # Show time, applying manifests changes using kubectl
+      - kubectl get svc
       - echo "Apply changes to kube manifests"            
       - kubectl apply -f manifests/
       - echo "All done!!!! Kubernetes changes applied"           
