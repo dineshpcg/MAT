@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "ubuntu"
+  namespace: "nginx"
+spec:
+  selector:
+    matchLabels:
+      app: "nginx"
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "nginx"
+    spec:
+      containers:
+      - image: 502433561161.dkr.ecr.us-east-1.amazonaws.com/testing2079656reponame:ubuntu
+        imagePullPolicy: Always
+        name: "nginx"
+        ports:
+        - containerPort: 80
