@@ -5,8 +5,6 @@ phases:
       - echo "Install Phase - if you need additional package, add it in this stage"
   pre_build:
       commands:
-        # This Docker Image tag will have date, time and Codecommit version
-        - TAG="$(date +%Y-%m-%d.%H.%M.%S).$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
         # Updating Docker Image tag in your Kubernetes Deployment Manifest 
         - pwd
         - ls -lrt       
