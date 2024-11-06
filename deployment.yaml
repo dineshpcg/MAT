@@ -14,7 +14,7 @@ spec:
         app: "nginx"
     spec:
       containers:
-      - image: 502433561161.dkr.ecr.us-east-1.amazonaws.com/testing2079656reponame:ubuntu
+      - image: CONTAINER_IMAGE
         imagePullPolicy: Always
         name: "nginx"
         ports:
